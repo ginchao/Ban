@@ -12,7 +12,7 @@ HttpService = game:GetService("HttpService")
   ["content"] = "",  
   ["embeds"] = {{  
   ["author"] = {  
-  ["name"] = game.Players.LocalPlayer.Name,  
+  ["name"] = "Level: "..game.Players.LocalPlayer.PlayerStats.lvl.Value..game.Players.LocalPlayer.Name,  
   ["icon"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png"  
   },  
   ["title"] = ""..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, 
@@ -21,8 +21,8 @@ HttpService = game:GetService("HttpService")
   ["color"] = tonumber(0xffffff),  
   ["fields"] = {  
   {  
-  ["name"] = "Script Sever",  
-  ["value"] = "game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId,'"..game.JobId.."')",  
+  ["name"] = "Beli: "..game.Players.LocalPlayer.PlayerStats.beli.Value,  
+  ["value"] = "Gem: "..game.Players.LocalPlayer.PlayerStats.Gem.Value,  
   ["inline"] = true },  
   {  
   ["name"] = "Người Dùng ID:",  
