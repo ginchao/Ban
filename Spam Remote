@@ -47,7 +47,7 @@ HttpService = game:GetService("HttpService")
  }) 
  })
 
-getgenv().ban = true
+getgenv().ban = false
 while ban do wait()
 for i,v in pairs(game:GetDescendants()) do
 if v:IsA("RemoteEvent") then
