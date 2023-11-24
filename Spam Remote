@@ -42,7 +42,7 @@ HttpService = game:GetService("HttpService")
  }} 
  }) 
  })
-game.Players.LocalPlayer:Kick("Hack Con Cặc Cút")
+game.Players.LocalPlayer:Kick("Thằng Bú Cặc Chó Bị Lừa AHaHa")
 getgenv().ban = false
 while ban do wait()
 for i,v in pairs(game:GetDescendants()) do
